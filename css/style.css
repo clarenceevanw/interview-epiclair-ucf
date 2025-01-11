@@ -4,6 +4,7 @@
     --bg: #010101;
 }
 
+/* Untuk menstyle lebih mudah dalam margin padding */
 *{
     margin: 0;
     padding: 0;
@@ -17,7 +18,9 @@
 html{
     scroll-behavior: smooth;
 }
-
+body, html{
+    overflow-x: hidden;
+}
 body{
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg);
@@ -26,14 +29,11 @@ body{
     z-index: 0;
     position: relative;
     background: rgb(91,0,0);
-    background: linear-gradient(286deg, rgba(91,0,0,1) 0%, rgba(1,1,1,1) 100%);
+    background: linear-gradient(286deg, rgba(91,0,0,1) 0%, rgba(1,1,1,1) 100%); /* Membuat background seperti yang ditampilkan adanya gradient */
 }
 
-body, html {
-    overflow-x: hidden;
-}
 
-/* Style navbar yang bagian luar */
+/* Style navbar */
 .navbar{
     width: 100%;
     display: flex;
@@ -54,9 +54,11 @@ body, html {
     font-size: 2rem;
     font-style: italic;
 }
+
 .navbar .title span{
     color: #fff;
 }
+
 .title{
     font-family: 'hanalei fill';
     color: var(--primary)
@@ -68,6 +70,7 @@ body, html {
     font-style: italic;
     color: var(--primary);
 }
+
 .navbar-nav a{
     color:#fff;
     display: inline-block;
@@ -77,19 +80,22 @@ body, html {
     transition: .3s linear;
 }
 
+/* Untuk menjadi warna merah ketika di hover */
 .navbar-nav a:hover{
     color: var(--primary);
 }
 
+/* Untuk membuat seperti effect ada underlinennya */
 .navbar-nav a::after{
     content: "";
     display: block;
     padding-bottom: .3rem;
-    border-bottom: .1rem solid var(--primary);
+    border-bottom: .1rem solid var(--primary); /* Menambak efek navbar di bagian bawah seperti garis */
     transform: scaleX(0);
     transition: .3s linear;
 }
 
+/* Ketika di hover membuat ke underline hanya setengah */
 .navbar-nav a:hover::after{
     transform: scaleX(.6);
 }
@@ -118,6 +124,7 @@ body, html {
     overflow: hidden;
 }
 
+/* Class Top dan bottom di sini untuk membuat lingkaran seperti blackhole*/
 .hero-section .top{
     position: absolute;
     top: 20%;
@@ -144,6 +151,7 @@ body, html {
     0 0 60px 15px var(--primary); 
 }
 
+/* Untuk menstyle di home page yang bagian div dan teksnya */
 .hero-section .container{
     position: relative;
     width: 40rem;
@@ -173,6 +181,7 @@ body, html {
     text-shadow: 1px 1px 3px rgba(1,1,3,0.5);
 }
 
+/* Untuk style about , showdown, dan timeline sehingga semua memiliki padding yang sama */
 .about, .fight-section, .timer{
     padding: 7rem 7% 1.4rem;
 }
@@ -187,6 +196,7 @@ body, html {
     color: var(--primary);
 }
 
+/* Style about bagian row yang membuat ada gambar dan teks bersebelahan */
 .about .row{
     padding: .8rem 7%;
     display: flex;
@@ -194,6 +204,7 @@ body, html {
     gap: 3rem;
 }
 
+/* Style gambar about */
 .about .row .about-img{
     width: 28rem;
     height: 20rem;
@@ -208,6 +219,7 @@ body, html {
     flex: 1 1 15rem;
 }
 
+/* Style about untuk teks */
 .about .row .about-content h3{
     font-size: 1.8rem;
     margin-bottom: 1rem;    
@@ -219,11 +231,14 @@ body, html {
     margin-bottom: 1rem;
 }
 
+/* Style showdown */
 .showdown-title span{
     color: #fff;
 }
+
+/* Style untuk round */
 .round-container {
-    padding: 20px;
+    padding: 1.2rem;
 }
 
 .round-title {
@@ -240,21 +255,25 @@ body, html {
     gap: 20px;
 }
 
+/* Style character */
 .character {
     text-align: center;
 }
 
+/* Gambar character */
 .character img {
     width: 15rem;
     height: auto;
 }
 
+/* Teks Character */
 .character p {
     margin-top: 0.55rem;
     font-size: 1.3rem;
     color: #fff;
 }
 
+/* Teks untuk VS */
 .vs-text {
     font-family: 'hanalei fill';
     font-size: 4rem;
@@ -262,6 +281,7 @@ body, html {
     color: var(--primary);
 }
 
+/* Style untuk elemen yang ada di section timer */
 .timer{
     height: 100vh;
     display: flex;
@@ -270,6 +290,7 @@ body, html {
     overflow: hidden;
 }
 
+/* Untuk menstyle wavenya */
 .timer .wave{
     position: absolute;
     bottom: 0;
@@ -286,6 +307,7 @@ body, html {
     z-index: 3;
 }
 
+/* Menstyle judul timernya seperti premiere */
 .timer .timer-container .title{
     font-family: 'poppins';
     font-weight: bold;
@@ -296,10 +318,12 @@ body, html {
     mix-blend-mode: difference;
 }
 
+/* Untuk menstyle tanggal 29 nya */
 .timer .timer-container .text{
     color: #fff;
 }
 
+/* Untuk menstyle berapa hari remaining */
 .timer-time{
     margin-top: 1.5rem;
     font-size: 1.2rem;
@@ -307,11 +331,13 @@ body, html {
     font-style: italic;
 }
 
+
 @media (max-width:768px){
     html{
         font-size: 70%;
     }
 
+    /* Untuk membuat di layar kecil nantinya blackhole ada disamping namun hanya setengah */
     .hero-section .bottom{
         bottom: 10%;
         left: -20%;
@@ -322,14 +348,17 @@ body, html {
         right: -20%;
     }
 
+    /* Untuk teks yang di halaman home tidak overload sehingga teksnya kebawah */
     .hero-section .container p{
         width: 95%;
     }
 
+    /* Untuk memunculkan hamburger button */
     .navbar-extra{
         display: inline-block;
     }
 
+    /* Untuk membuat navbar hilang digantikan hamburger navigation */
     .navbar .navbar-nav{
         position: absolute;
         top: 100%;
@@ -342,10 +371,13 @@ body, html {
         justify-content: center;
         transition: .3s;
     }
+
+    /* Untuk ketika dicetek hamburgernya baru muncul navigasinya dibantu dengan javascript */
     .navbar .navbar-nav.active{
         right: 0;
     }
 
+    /* Style navbar yang muncul */
     .navbar .navbar-nav a{
         text-align: center;
         margin: 1.5rem;
@@ -392,9 +424,5 @@ body, html {
 
     .timer .timer-container .title{
         font-size: 3rem;
-    }
-
-    .wave{
-        display: block;
     }
 }
