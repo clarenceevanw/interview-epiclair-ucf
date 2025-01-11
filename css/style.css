@@ -99,7 +99,7 @@ body, html {
     color: var(--primary);
 }
 
-#hamburger-menu{
+.navbar-extra{
     display: none;
 }
 
@@ -303,7 +303,7 @@ body, html {
         font-size: 70%;
     }
 
-    #hamburger-menu{
+    .navbar-extra{
         display: inline-block;
     }
 
