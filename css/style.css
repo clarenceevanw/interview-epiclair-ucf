@@ -127,6 +127,7 @@ body, html {
     filter: blur(8px);
     z-index: -1;
 }
+
 .hero-section::after{
     content: "";
     display: block;
@@ -260,6 +261,7 @@ body, html {
     justify-content: center;
     align-items: center;
     position: relative;
+    overflow: hidden;
 }
 
 .timer .wave{
@@ -275,6 +277,7 @@ body, html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 1;
 }
 
 .timer .timer-container .title{
@@ -289,7 +292,6 @@ body, html {
 .timer .timer-container .text{
     color: #fff;
 }
-
 
 .timer-time{
     margin-top: 1.5rem;
@@ -371,7 +373,7 @@ body, html {
         font-size: 3rem;
     }
 
-    .wave svg{
+    .wave{
         display: block;
     }
 }
